@@ -1,7 +1,7 @@
 sceneSetups:
 - path: Assets/Together.unity
   isLoaded: 1
-  isActive: 1
+  isActive: 0
 - path: Assets/Bathroom.unity
   isLoaded: 1
   isActive: 0
@@ -16,4 +16,4 @@ sceneSetups:
   isActive: 0
 - path: Assets/Storage.unity
   isLoaded: 1
-  isActive: 0
+  isActive: 1
