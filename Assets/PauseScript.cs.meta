@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 33cfff0e6a06de24ab2bfd06e2b33ef2
+guid: 22a80da0fd01abb48b7ec7fc3f32ddee
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - cookie: {fileID: 141608, guid: 4866bf394c1acf546932b86d059a09c6, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
