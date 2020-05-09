@@ -8,9 +8,6 @@ public class LoadHouse : MonoBehaviour {
 
 	public GameObject cookie;
 
-	private int cookieCount;
-
-	// Use this for initialization
 	void Start () {
 		//--generate rooms--
 		GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
@@ -27,12 +24,7 @@ public class LoadHouse : MonoBehaviour {
 			room.SetActive(false);
 		}
 
-		//--spawn in cookie--
-		cookieCount = 0;
-		GameObject[] cookiePoints = GameObject.FindGameObjectsWithTag("CookiePoint");
-		int j = rnd.Next(0, cookiePoints.Length-1);
-		Instantiate(cookie, cookiePoints[j].transform.position, cookie.transform.rotation);
-		cookieCount++;
+		cookie.SetActive(true);
 
 		//--generate navmesh--
 		GetComponent<NavMeshSurface>().BuildNavMesh();

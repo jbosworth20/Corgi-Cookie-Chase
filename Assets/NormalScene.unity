@@ -248,6 +248,18 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 141608, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
   m_PrefabInternal: {fileID: 1353995928}
+--- !u!114 &282363335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282363334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359a198f8c1408e47a9858cc303ebeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookie: {fileID: 282363334}
 --- !u!95 &282363342
 Animator:
   serializedVersion: 3
@@ -1003,6 +1015,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485448, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 141608, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
