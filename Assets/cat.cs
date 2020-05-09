@@ -42,7 +42,7 @@ public class cat : MonoBehaviour
         movement_input.x = Input.GetAxisRaw("Horizontal") * speed;
         movement_input.z = Input.GetAxis("Vertical") * speed;
 
-        print(movement_input.y);
+        //print(movement_input.y);
 
         if(movement_input.y <= 0)
         {
