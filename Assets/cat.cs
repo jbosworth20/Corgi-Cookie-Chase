@@ -20,11 +20,11 @@ public class cat : MonoBehaviour
     {
         isJumping = false;
         movement_input = Vector3.zero;
-        walking_speed = 5.0f;
-        running_speed = 7.0f;
-        rotation_speed = 10f;
-        jump_speed = 7.5f;
-        gravity = 4.5f;
+        // walking_speed = 5.0f;
+        // running_speed = 7.0f;
+        // rotation_speed = 10f;
+        // jump_speed = 7.5f;
+        // gravity = 4.5f;
     }
 
     // FixedUpdate is used for Physics
