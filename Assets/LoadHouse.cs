@@ -27,8 +27,6 @@ public class LoadHouse : MonoBehaviour {
 		GameObject[] cookiePoints = GameObject.FindGameObjectsWithTag("CookiePoint");
 		int j = rnd.Next(0, cookiePoints.Length-1);
 		Instantiate(cookie, cookiePoints[j].transform.position, cookie.transform.rotation);
-		//Instantiate(cookie, new Vector3(0, 4, 25), cookiePoints[j].transform.rotation);
 		cookieCount++;
-		print(cookiePoints[j].transform.position);
 	}
 }
