@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 143576383423078456}
   - component: {fileID: 95039960863759956}
   - component: {fileID: 114688483286707488}
+  - component: {fileID: 136482033452361608}
   m_Layer: 0
   m_Name: Cat Lite
   m_TagString: Untagged
@@ -1263,15 +1264,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451637621101668}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 63.89, y: -3, z: -14.16}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 64.1, y: -3, z: 25.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4986622874234500}
   - {fileID: 4907609962346604}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4831576432553796
 Transform:
   m_ObjectHideFlags: 1
@@ -1456,7 +1457,7 @@ MonoBehaviour:
   character: {fileID: 143576383423078456}
   walking_speed: 4
   running_speed: 6
-  rotation_speed: 20
+  rotation_speed: 25
   jump_speed: 7.5
   gravity: 4.5
 --- !u!114 &114721060833414842
@@ -1478,6 +1479,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989781955060114}
   m_Enabled: 1
+--- !u!136 &136482033452361608
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893018938964752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!137 &137050773393007328
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
