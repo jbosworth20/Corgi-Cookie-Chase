@@ -11,6 +11,7 @@ public class cat : MonoBehaviour
 
     public float walking_speed;
     public float running_speed;
+    public float rotation_speed;
     public float jump_speed;
     public float gravity;
 
@@ -19,14 +20,15 @@ public class cat : MonoBehaviour
     {
         isJumping = false;
         movement_input = Vector3.zero;
-        walking_speed = 3.0f;
-        running_speed = 5.0f;
-        //jump_speed = 3.0f;
-        //gravity = 2.4f;
+        walking_speed = 5.0f;
+        running_speed = 7.0f;
+        rotation_speed = 10f;
+        jump_speed = 7.5f;
+        gravity = 4.5f;
     }
 
     // FixedUpdate is used for Physics
-    void FixedUpdate()
+    void Update()
     {
         float speed = 0.0f;
         if (Input.GetKey(KeyCode.LeftShift))
@@ -37,39 +39,56 @@ public class cat : MonoBehaviour
         {
             speed = walking_speed;
         }
-        print(Input.GetAxis("Horizontal"));
-        movement_input.x = Input.GetAxis("Horizontal") * speed;
+        movement_input.x = Input.GetAxisRaw("Horizontal") * speed;
         movement_input.z = Input.GetAxis("Vertical") * speed;
-        //if (character.isGrounded)
-        //{
-        //    animator.SetBool("isJumping", false);
-        //    if (Input.GetKeyDown(KeyCode.Space))
-        //    {
-        //        movement_input.y = jump_speed;
-        //    }
-        //}
-        //else
-        //{
-        //    movement_input.y = movement_input.y - gravity * Time.deltaTime;
-        //    animator.SetBool("isJumping", true);
-        //}
-        print(movement_input);
-        if (movement_input.x != 0 || movement_input.z != 0)
+
+        if (character.isGrounded)
         {
-            print("LOL");
-            character.Move(movement_input * Time.deltaTime);
-            character.transform.rotation = Quaternion.LookRotation(new Vector3(movement_input.x, 0.0f, movement_input.z));
-            animator.SetBool("isWalking", true);
+            //animator.SetBool("isJumping", false);
+            if (Input.GetKeyDown(KeyCode.Space) && movement_input.y <= 0)
+            {
+                print("JUMPED");
+                movement_input.y = jump_speed;
+            }
+        }
+        
+        if (movement_input.y > 0)
+        {
+            print("fall");
+            movement_input.y -= gravity * Time.deltaTime;
+            character.Move(Vector3.up * movement_input.y * Time.deltaTime);
+            //animator.SetBool("isJumping", true);
+        }
+
+        //print(movement_input);
+        animator.SetFloat("movement_speed", (float) movement_input.z);
+        //print(animator.GetFloat("movement_speed"));
+
+        if (movement_input.x != 0)
+        {
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, movement_input.z)), Time.deltaTime * 7);
+            //print(movement_input.x);
+            transform.Rotate(Vector3.up, Time.deltaTime * rotation_speed * movement_input.x);
+        }
+
+        if (movement_input.z != 0)
+        {
+            //print("WALKING");
+            character.Move(transform.forward * movement_input.z * speed * Time.deltaTime);
+            //Vector3 look_rot = Quaternion.LookRotation(new Vector3(movement_input.x, 0.0f, movement_input.z).normalized).eulerAngles;
+            //animator.SetBool("isWalking", true);
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                animator.SetBool("isRunning", true);
+                //animator.SetBool("isRunning", true);
             }
         }
         else
         {
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isWalking", false);
+            print("NOT WALKING");
+            //animator.SetBool("isRunning", false);
+            //animator.SetBool("isWalking", false);
         }
 
+        character.Move(new Vector3(0, movement_input.y, 0) * Time.deltaTime);
     }
 }
