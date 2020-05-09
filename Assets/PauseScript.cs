@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour {
 
-	public GameObject pausePanel; 
+	public GameObject canvas; 
 
 	// Use this for initialization
 	void Start () {
-		pausePanel.SetActive(false);
+		canvas.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape)){
-			if(pausePanel.activeInHierarchy){
+			if(canvas.activeInHierarchy){
 				Continue();
 			}
 			else{
@@ -22,12 +22,12 @@ public class PauseScript : MonoBehaviour {
 			}
 		}
 	}
-	private void Continue(){
+	public void Continue(){
 		Time.timeScale = 1;
-		pausePanel.SetActive(false);
+		canvas.SetActive(false);
 	}
-	private void Pause(){
+	public void Pause(){
 		Time.timeScale = 0;
-		pausePanel.SetActive(true);
+		canvas.SetActive(true);
 	}
 }
