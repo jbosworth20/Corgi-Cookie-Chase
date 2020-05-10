@@ -21,6 +21,10 @@ public class HumanAgent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        float rand = Random.Range(0, 1);
+        if(rand == .003){
+
+        }
 		agent.SetDestination(target.position);
 		
 		Vector3 deltaPos = agent.nextPosition - transform.position;
@@ -47,8 +51,14 @@ public class HumanAgent : MonoBehaviour {
 			if(anim.GetFloat("MoveSpeed") != 0){
 				anim.SetFloat("MoveSpeed", 0f);
 				anim.SetTrigger("Pickup");
-				//TODO: GAME OVER!
-			}
+                //Sound below this: For when human picks you up
+                PlayAudio audio = FindObjectOfType<PlayAudio>();
+                audio.PlayAtLocation(0, transform.position);
+                //TODO: GAME OVER!
+                //Sound below this: For when you lose
+                PlayAudio loss_audio = FindObjectOfType<PlayAudio>();
+                loss_audio.PlayAtLocation(3, transform.position);
+            }
 				
 		}
 		else{

@@ -42,7 +42,7 @@ public class cat : MonoBehaviour
         movement_input.x = Input.GetAxisRaw("Horizontal") * speed;
         movement_input.z = Input.GetAxis("Vertical") * speed;
 
-        //print(movement_input.y);
+        print(movement_input.y);
 
         if(movement_input.y <= 0)
         {
@@ -54,12 +54,12 @@ public class cat : MonoBehaviour
                 }
         }
         
-        if (movement_input.y > 0)
-        {
+        //if (movement_input.y > 0)
+        //{
             movement_input.y -= gravity * Time.deltaTime;
             character.Move(Vector3.up * movement_input.y * Time.deltaTime);
             //animator.SetBool("isJumping", true);
-        }
+        //}
 
         animator.SetFloat("movement_speed", (float) movement_input.z);
 
