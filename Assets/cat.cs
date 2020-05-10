@@ -6,14 +6,16 @@ public class cat : MonoBehaviour
 {
     public Animator animator;
     public CharacterController character;
-    Vector3 movement_input;
-    bool isJumping;
+    public Collider col;
+    //bool isJumping;
 
     public float walking_speed;
     public float running_speed;
     public float rotation_speed;
     public float jump_speed;
     public float gravity;
+
+    private Vector3 movement_input;
 
     // Use this for initialization
     void Start()
@@ -42,30 +44,31 @@ public class cat : MonoBehaviour
         movement_input.x = Input.GetAxisRaw("Horizontal") * speed;
         movement_input.z = Input.GetAxis("Vertical") * speed;
 
-        //print(movement_input.y);
-
-        if(movement_input.y <= 0)
+        bool isg = isGrounded();
+        if (isg)
         {
             //animator.SetBool("isJumping", false);
-
             if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    movement_input.y = jump_speed;
-                }
+            {
+                movement_input.y = jump_speed;
+            }
         }
         
-        if (movement_input.y > 0)
+        if(!isg || movement_input.y > 0)
         {
             movement_input.y -= gravity * Time.deltaTime;
             character.Move(Vector3.up * movement_input.y * Time.deltaTime);
             //animator.SetBool("isJumping", true);
         }
 
+        //print(movement_input);
         animator.SetFloat("movement_speed", (float) movement_input.z);
+        //print(animator.GetFloat("movement_speed"));
 
         if (movement_input.x != 0)
         {
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(new Vector3(0, 0, movement_input.z)), Time.deltaTime * 7);
+            //print(movement_input.x);
             transform.Rotate(Vector3.up, Time.deltaTime * rotation_speed * movement_input.x);
         }
 
@@ -76,16 +79,18 @@ public class cat : MonoBehaviour
             //animator.SetBool("isWalking", true);
             // if (Input.GetKey(KeyCode.LeftShift))
             // {
-            //     animator.SetBool("isRunning", true);
+            //     //animator.SetBool("isRunning", true);
             // }
         }
         // else
         // {
-        //     print("NOT WALKING");
         //     //animator.SetBool("isRunning", false);
         //     //animator.SetBool("isWalking", false);
         // }
 
         //character.Move(new Vector3(0, movement_input.y, 0) * Time.deltaTime);
+    }
+    private bool isGrounded(){
+        return Physics.Raycast(transform.position, -Vector3.up, 1.9f);
     }
 }
