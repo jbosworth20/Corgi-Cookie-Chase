@@ -32,8 +32,8 @@ public class HumanAgent : MonoBehaviour {
         if(time_since_talk > 6.5f){
             if (rand < .5f)
             {
-                print("RANDOM");
-                aiaudio.PlayAtLocation(0, transform.position);
+                int randloc = Random.Range(0, 3);
+                aiaudio.PlayAtLocation(randloc, transform.position);
             }
             time_since_talk = 0f;
         }
