@@ -59,7 +59,7 @@ public class HumanAgent : MonoBehaviour {
 		//print(agent.remainingDistance + ", " + (agent.transform.position - target.position).magnitude);
 
 		//if( (agent.transform.position - target.position).magnitude <= 5){
-		if (agent.remainingDistance <= 10) {
+		if ((agent.transform.position - target.position).magnitude <= 7) {
 			if(anim.GetFloat("MoveSpeed") != 0){
 				anim.SetFloat("MoveSpeed", 0f);
 				anim.SetTrigger("Pickup");
