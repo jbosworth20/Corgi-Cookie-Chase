@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CookieScript : MonoBehaviour {
 
@@ -8,14 +9,14 @@ public class CookieScript : MonoBehaviour {
 
 	private int cookieCount;
 	private System.Random rnd;
-	private GameObject[] cookiePoints;
+	private List<GameObject> cookiePoints;
     public PlayAudio audio;
 
     // Use this for initialization
     void Start() {
         rnd = new System.Random();
         //--spawn in cookie--
-		cookiePoints = GameObject.FindGameObjectsWithTag("CookiePoint");
+		cookiePoints = GameObject.FindGameObjectsWithTag("CookiePoint").ToList();
 		cookieCount = 0;
 		spawnCookie();
         audio = FindObjectOfType<PlayAudio>();
@@ -29,9 +30,10 @@ public class CookieScript : MonoBehaviour {
             audio.PlayAtLocation(2, transform.position);
         }
 		else{
-			int j = rnd.Next(0, cookiePoints.Length-1);
+			int j = rnd.Next(0, cookiePoints.Count()-1);
 			cookie.transform.position = cookiePoints[j].transform.position;
 			cookieCount++;
+			cookiePoints.RemoveAt(j);
 		}
 	}
 	void OnTriggerEnter(Collider c){
