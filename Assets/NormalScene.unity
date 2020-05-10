@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookie: {fileID: 282363334}
+  audio: {fileID: 0}
 --- !u!95 &282363342
 Animator:
   serializedVersion: 3
@@ -1027,6 +1028,10 @@ Prefab:
     - target: {fileID: 141608, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467492, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5435176, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
