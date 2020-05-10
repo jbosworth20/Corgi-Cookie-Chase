@@ -209,6 +209,17 @@ MonoBehaviour:
   text: {fileID: 0}
   victoryPanel: {fileID: 1802193305}
   audio: {fileID: 0}
+--- !u!114 &282363336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282363334}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1157578b8e85bf8418b832ad3c1191ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &282363342
 Animator:
   serializedVersion: 3
@@ -1175,6 +1186,11 @@ Prefab:
       propertyPath: clips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+    - target: {fileID: 114645880607653572, guid: 3b881800a2b5d744390b4665f6e60c6d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
   m_IsPrefabParent: 0
