@@ -8,6 +8,7 @@ public class CookieScript : MonoBehaviour {
 
     public GameObject cookie;
 	public Text text;
+	public GameObject victoryPanel;
 
 	private int cookieCount;
 	private System.Random rnd;
@@ -30,6 +31,8 @@ public class CookieScript : MonoBehaviour {
             //Sound below is played for a win:
             
             audio.PlayAtLocation(2, transform.position);
+			victoryPanel.SetActive(true);
+			cookie.transform.position = new Vector3(0,-100,0);
         }
 		else{
 			int j = rnd.Next(0, cookiePoints.Count()-1);
