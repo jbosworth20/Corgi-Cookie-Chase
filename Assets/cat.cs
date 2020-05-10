@@ -44,7 +44,7 @@ public class cat : MonoBehaviour
 
         //print(movement_input.y);
 
-        if(movement_input.y <= 0)
+        if(isGrounded())
         {
             //animator.SetBool("isJumping", false);
 
@@ -87,5 +87,8 @@ public class cat : MonoBehaviour
         // }
 
         //character.Move(new Vector3(0, movement_input.y, 0) * Time.deltaTime);
+    }
+    private bool isGrounded(){
+        return Physics.Raycast(transform.position, -Vector3.up, 1.9f);
     }
 }
