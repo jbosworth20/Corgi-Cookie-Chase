@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class CookieScript : MonoBehaviour {
 
     public GameObject cookie;
+	public Text text;
 
 	private int cookieCount;
 	private System.Random rnd;
@@ -17,13 +19,13 @@ public class CookieScript : MonoBehaviour {
         rnd = new System.Random();
         //--spawn in cookie--
 		cookiePoints = GameObject.FindGameObjectsWithTag("CookiePoint").ToList();
-		cookieCount = 0;
+		cookieCount = -1;
 		spawnCookie();
         audio = FindObjectOfType<PlayAudio>();
     }
 
     void spawnCookie(){
-		if(cookieCount >= 5){
+		if(cookieCount == 4){
 			print("Victory!");
             //Sound below is played for a win:
             
@@ -34,6 +36,7 @@ public class CookieScript : MonoBehaviour {
 			cookie.transform.position = cookiePoints[j].transform.position;
 			cookieCount++;
 			cookiePoints.RemoveAt(j);
+			text.text = "Score: " + cookieCount + "/5";
 		}
 	}
 	void OnTriggerEnter(Collider c){
