@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1177,6 +1177,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1802193305 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1018190412851150, guid: 3b881800a2b5d744390b4665f6e60c6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1802193304}
+--- !u!4 &1802193306 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4136801117451798, guid: 3b881800a2b5d744390b4665f6e60c6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1802193304}
 --- !u!1001 &1804916922
 Prefab:
   m_ObjectHideFlags: 0
@@ -1412,7 +1422,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1824340380413090, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1453,7 +1463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f73d68c9cf3544d97557e1e8be57d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1802193306}
+  gameOver: {fileID: 1802193305}
 --- !u!195 &2086192098
 NavMeshAgent:
   m_ObjectHideFlags: 0

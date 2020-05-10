@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class HumanAgent : MonoBehaviour {
 
 	public Transform target;
+	public GameObject gameOver;
 	UnityEngine.AI.NavMeshAgent agent;
 	Animator anim;
 	Vector2 smooth = Vector2.zero;
@@ -69,6 +70,8 @@ public class HumanAgent : MonoBehaviour {
                 //Sound below this: For when you lose
                 //PlayAudio loss_audio = FindObjectOfType<PlayAudio>();
                 audio.PlayAtLocation(3, transform.position);
+
+				gameOver.SetActive(true);
             }
 				
 		}
