@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookie: {fileID: 282363334}
+  audio: {fileID: 0}
 --- !u!95 &282363342
 Animator:
   serializedVersion: 3
@@ -1483,6 +1484,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1826602235}
+--- !u!114 &1131069255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131069247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca89efe2c5803f4789fe6892c01214a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 8297dd984cf75bf45ba2db4bc679bce0, type: 3}
+  - {fileID: 8300000, guid: 836df20016509424c912d735b959b00a, type: 3}
+  - {fileID: 8300000, guid: ce1d17d0b5d6c6845ae71c2c54c6715d, type: 3}
+  - {fileID: 8300000, guid: 836df20016509424c912d735b959b00a, type: 3}
 --- !u!1 &1296179721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1527,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.55
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -10,20 +10,32 @@ public class HumanAgent : MonoBehaviour {
 	Animator anim;
 	Vector2 smooth = Vector2.zero;
     Vector2 velocity = Vector2.zero;
+    float time_since_talk;
+    PlayAudio audio;
+    AIAudio aiaudio;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.speed = 10;
 		anim = GetComponent<Animator>();
 		agent.updatePosition = false;
-	}
+        time_since_talk = 0;
+        audio = FindObjectOfType<PlayAudio>();
+        aiaudio = FindObjectOfType<AIAudio>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        time_since_talk += Time.deltaTime;
         float rand = Random.Range(0, 1);
-        if(rand == .003){
-
+        if(time_since_talk > 6.5f){
+            if (rand < .5f)
+            {
+                print("RANDOM");
+                aiaudio.PlayAtLocation(0, transform.position);
+            }
+            time_since_talk = 0f;
         }
 		agent.SetDestination(target.position);
 		
@@ -52,12 +64,11 @@ public class HumanAgent : MonoBehaviour {
 				anim.SetFloat("MoveSpeed", 0f);
 				anim.SetTrigger("Pickup");
                 //Sound below this: For when human picks you up
-                PlayAudio audio = FindObjectOfType<PlayAudio>();
                 audio.PlayAtLocation(0, transform.position);
                 //TODO: GAME OVER!
                 //Sound below this: For when you lose
-                PlayAudio loss_audio = FindObjectOfType<PlayAudio>();
-                loss_audio.PlayAtLocation(3, transform.position);
+                //PlayAudio loss_audio = FindObjectOfType<PlayAudio>();
+                audio.PlayAtLocation(3, transform.position);
             }
 				
 		}

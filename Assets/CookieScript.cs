@@ -9,6 +9,7 @@ public class CookieScript : MonoBehaviour {
 	private int cookieCount;
 	private System.Random rnd;
 	private GameObject[] cookiePoints;
+    public PlayAudio audio;
 
     // Use this for initialization
     void Start() {
@@ -17,13 +18,14 @@ public class CookieScript : MonoBehaviour {
 		cookiePoints = GameObject.FindGameObjectsWithTag("CookiePoint");
 		cookieCount = 0;
 		spawnCookie();
+        audio = FindObjectOfType<PlayAudio>();
     }
 
     void spawnCookie(){
 		if(cookieCount >= 5){
 			print("Victory!");
             //Sound below is played for a win:
-            PlayAudio audio = FindObjectOfType<PlayAudio>();
+            
             audio.PlayAtLocation(2, transform.position);
         }
 		else{
@@ -34,7 +36,6 @@ public class CookieScript : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider c){
         //These two lines below play the noise for getting the cookie
-        PlayAudio audio = FindObjectOfType<PlayAudio>();
         audio.PlayAtLocation(1, transform.position);
         spawnCookie();
 	}
