@@ -1169,6 +1169,11 @@ Prefab:
       propertyPath: jump_speed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114574232829179144, guid: 3b881800a2b5d744390b4665f6e60c6d,
+        type: 2}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
   m_IsPrefabParent: 0
