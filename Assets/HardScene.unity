@@ -288,7 +288,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4082061388221724, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.1972642
+      value: 72.1
       objectReference: {fileID: 0}
     - target: {fileID: 4082061388221724, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -296,7 +296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082061388221724, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9.999585
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4082061388221724, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -340,6 +340,10 @@ Prefab:
     - target: {fileID: 1548441962214868, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874233750302496, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
+      propertyPath: m_Name
+      value: CatAndCamera
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114683618907209858, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
@@ -1355,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f73d68c9cf3544d97557e1e8be57d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1518322265}
 --- !u!114 &1131069255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1668,6 +1672,11 @@ Transform:
   m_Father: {fileID: 588881572}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!4 &1518322265 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4136801117451798, guid: 3b881800a2b5d744390b4665f6e60c6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 226720887}
 --- !u!1 &1528081892
 GameObject:
   m_ObjectHideFlags: 0
