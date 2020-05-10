@@ -36,7 +36,8 @@ public class CookieScript : MonoBehaviour {
 			cookie.transform.position = cookiePoints[j].transform.position;
 			cookieCount++;
 			cookiePoints.RemoveAt(j);
-			text.text = "Score: " + cookieCount + "/5";
+			if(text)
+				text.text = "Score: " + cookieCount + "/5";
 		}
 	}
 	void OnTriggerEnter(Collider c){

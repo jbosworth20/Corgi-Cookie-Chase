@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookie: {fileID: 282363334}
+  text: {fileID: 0}
   audio: {fileID: 0}
 --- !u!95 &282363342
 Animator:
@@ -650,7 +651,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 141608, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6467492, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
       propertyPath: m_IsTrigger
