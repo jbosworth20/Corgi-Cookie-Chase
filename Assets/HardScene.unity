@@ -382,6 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookie: {fileID: 282363334}
   text: {fileID: 1318773358}
+  victoryPanel: {fileID: 1905074494}
   audio: {fileID: 0}
 --- !u!95 &282363342
 Animator:

@@ -279,6 +279,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 925a0cf86ba26a943bc56447ec654231, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &225109012 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1018190412851150, guid: 3b881800a2b5d744390b4665f6e60c6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 393225407}
 --- !u!1 &282363334 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141608, guid: 69d141b9c8b2d864082b4fa7c169b5da, type: 2}
@@ -296,6 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookie: {fileID: 282363334}
   text: {fileID: 0}
+  victoryPanel: {fileID: 225109012}
   audio: {fileID: 0}
 --- !u!95 &282363342
 Animator:
@@ -647,20 +653,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 1874233750302496, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
-      propertyPath: m_Name
-      value: CatAndCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 114903483188688418, guid: 3b881800a2b5d744390b4665f6e60c6d,
-        type: 2}
-      propertyPath: jump_speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114574232829179144, guid: 3b881800a2b5d744390b4665f6e60c6d,
-        type: 2}
-      propertyPath: clips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b881800a2b5d744390b4665f6e60c6d, type: 2}
   m_IsPrefabParent: 0
@@ -1133,7 +1125,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1146267516 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1018190412851150, guid: 3b881800a2b5d744390b4665f6e60c6d,
+  m_PrefabParentObject: {fileID: 1886054195906958, guid: 3b881800a2b5d744390b4665f6e60c6d,
     type: 2}
   m_PrefabInternal: {fileID: 393225407}
 --- !u!1001 &1353995928
